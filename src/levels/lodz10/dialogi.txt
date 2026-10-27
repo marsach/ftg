@@ -1,0 +1,170 @@
+# ==================================================================
+#  OPEN SPACE · Łódź +10 · poniedziałek, 26 października
+# ==================================================================
+#
+#  JAK EDYTOWAĆ
+#   [klucz]            początek bloku; kod fabuły (story.ts) używa tego klucza
+#   [klucz] tekst      blok jednowierszowy, np. treść celu na identyfikatorze
+#   kto: tekst         kwestia postaci (lista postaci: postacie.json)
+#   narrator: tekst    narracja (kursywa)
+#   mysl: tekst        myśli bohatera
+#   - tekst            opcja wyboru (kolejność ma znaczenie!)
+#   Linia bez „kto:” dokleja się do poprzedniej kwestii.
+#   *kursywa*, **pogrubienie**, cudzysłów w kwestii: «tak».
+#
+#  SPRAWDZANIE: npm run teksty
+#   (brakujące klucze, nieużywane bloki, nieznane postacie, za długie kwestie)
+# ==================================================================
+
+
+# ------------------------------------------------------------------
+#  08:57 · Hol przy windach
+# ------------------------------------------------------------------
+
+[start]
+narrator: Poniedziałek, 8:57. Drzwi windy zamykają się za tobą. Dziesiąte piętro pachnie kawą, której nikt jeszcze nie zaparzył.
+mysl: Stand-up o 9:15 w Persji. Bez kawy nie przeżyję nawet „szybkiego syncu”.
+
+[cel.kawa] Zdobądź kawę przed stand-upem. Kuchnia jest za toaletami.
+[cel.kuba] Znajdź Smol@ra z IT. Siedzi w Working Area 10.01, przy szafie z serwerem.
+[cel.ekspres] Wróć do ekspresu w kuchni.
+[cel.sala] Idź na stand-up do sali „Persia”.
+
+
+# ------------------------------------------------------------------
+#  Kuchnia
+# ------------------------------------------------------------------
+
+[ekspres]
+narrator: Ekspres mruga na pomarańczowo. Na wyświetlaczu: «ODKAMIENIANIE 1/14».
+narrator: Ktoś przykleił kartkę: «Nie działa. Zgłoszenie #4471. Smol@r z IT wie».
+mysl: Czternaście etapów. Kto to projektował?
+
+[ekspres.znowu]
+narrator: Nadal «ODKAMIENIANIE 1/14». Kartka nadal twierdzi, że Smol@r wie.
+
+[ekspres.naprawa]
+narrator: Przytrzymujesz «kawa» i «mleko». Ekspres wzdycha, bulgocze i po chwili napełnia kubek.
+narrator: Na kubku napis: «Najlepszy pracownik kwartału 2019». Nie twój.
+mysl: Wreszcie.
+
+[ekspres.pelny]
+mysl: Mam już kawę. Druga byłaby wołaniem o pomoc.
+
+[ola]
+ola: Słyszałeś? W Persji znowu nie działa HDMI.
+ola: Ania przyniosła własny adapter. Trzy adaptery, połączone szeregowo.
+
+
+# ------------------------------------------------------------------
+#  Working Area 10.01
+# ------------------------------------------------------------------
+
+[kuba.nic]
+kuba: Jak nic się nie pali, to nie do mnie. Jak się pali, to przez portal zgłoszeń.
+
+[kuba]
+kuba: Ekspres? Zgłoszenie jest w statusie «W analizie».
+- Smol@r, proszę. Stand-up za kwadrans.
+- Mogę pomóc w analizie?
+
+[kuba.prosze]
+kuba: No dobra. Przytrzymaj «kawa» i «mleko» przez pięć sekund. Nikomu ani słowa.
+mysl: Cała wiedza działu IT w jednym zdaniu.
+
+[kuba.analiza]
+kuba: Analiza polega na przytrzymaniu «kawa» i «mleko» przez pięć sekund.
+Oficjalnie trwa dwa tygodnie.
+
+[kuba.pozniej]
+kuba: Jak ktoś zapyta, ekspres naprawił się sam. Samoleczący system.
+
+
+# ------------------------------------------------------------------
+#  Korytarz przed Persją
+# ------------------------------------------------------------------
+
+[bozena]
+bozena: Dzień dobry. Widziałeś mojego maila z piątku, z 17:58?
+- Oczywiście. Przeczytałem dwa razy.
+- Jakiego maila?
+
+[bozena.1]
+bozena: Świetnie. W takim razie zreferujesz go na stand-upie.
+mysl: Muszę przeczytać tego maila. I wypić kawę. Kolejność do ustalenia.
+
+[bozena.2]
+bozena: Tego o nowym procesie zgłaszania potrzeby zgłoszenia. Poszedł do całego działu.
+bozena: Masz czas do 9:15.
+
+[bozena.pozniej]
+bozena: Stand-up o 9:15 w Persji. Mamy tylko trzynaście punktów.
+
+
+# ------------------------------------------------------------------
+#  Reszta piętra
+# ------------------------------------------------------------------
+
+[marek]
+marek: Nie teraz, jestem na callu.
+narrator: Marcin ma otwarty arkusz i wyciszone spotkanie. Słuchawki leżą obok, niepodłączone.
+
+[ania]
+narrator: Magda ma słuchawki z redukcją szumów. I minę z redukcją rozmów.
+
+[fikus]
+narrator: Fikus. Tabliczka w doniczce: «Zbigniew. Pracownik miesiąca».
+mysl: Podlewają go częściej, niż ja dostaję feedback.
+
+[drukarka]
+narrator: Drukarka zgłasza: «Zacięcie papieru w podajniku 7». Drukarka ma trzy podajniki.
+
+
+# ------------------------------------------------------------------
+#  Hol przy Vice City · Radek, Head of AI Transformation
+# ------------------------------------------------------------------
+
+[radek]
+radek: O, cześć! Masz chwilę? Właśnie robię transformację AI całego piętra.
+radek: Mamy roadmapę, mamy wizję i kanał na Slacku. Sto czterdzieści osób, zero wiadomości.
+- Super. Co już działa?
+- Pomożesz mi z ekspresem?
+
+[radek.co]
+radek: Działa? Jesteśmy w fazie discovery. Faza zero. Właściwie faza minus jeden.
+radek: Prompt mam gotowy. Czekam tylko na licencję, zgodę compliance i laptopa, który nie wymaga restartu co godzinę.
+mysl: Czyli nic.
+
+[radek.pomoc]
+radek: Ekspres to idealny use case dla agenta! Sam rozpoznaje stan, eskaluje, zamyka tickety.
+radek: Tylko że ekspres nie ma API. A ja nie mam dostępu do kuchni przez SSO. Zgłoś to do IT.
+mysl: Czyli do Smol@ra. Jak zawsze.
+
+[radek.ekspres]
+radek: Słyszałem o ekspresie. Wrzuciłem pytanie do czatu. Odpowiedział, żebym skontaktował się z serwisem producenta.
+radek: Halucynacja. Na pewno.
+
+[radek.znowu]
+radek: Wiesz, że do 2027 AI zastąpi połowę stanowisk? Na razie zastąpiło mi kalendarz. Źle.
+
+[radek.znowu2]
+radek: Robię prezentację o AI na zarząd. Sto slajdów. Generuje mi się od piątku.
+narrator: Na ekranie laptopa Radka kręci się kółko ładowania.
+
+[radek.kawa]
+radek: O, kawa! Prawdziwa? Bo ja robię PoC wirtualnego baristy.
+radek: Na razie umie powiedzieć «Dzień dobry». Po angielsku. Czasem.
+
+
+# ------------------------------------------------------------------
+#  09:15 · Persia 10.03
+# ------------------------------------------------------------------
+
+[sala.bez]
+mysl: Bez kawy tam nie wchodzę. To nie podlega negocjacji.
+
+[sala.koniec]
+narrator: Wchodzisz do Persji z kubkiem w dłoni. Sześćdziesiąt krzeseł, trzy osoby. Ania podłącza trzeci adapter.
+narrator: Radek dołączył zdalnie, «bo agent robi mu notatki». Agent się nie połączył. Radek też.
+bozena: Świetnie, jesteśmy w komplecie. Punkt pierwszy: dlaczego zaczynamy z opóźnieniem.
+narrator: Jest 9:15. Spotkanie potrwa piętnaście minut. Tak jest w zaproszeniu.

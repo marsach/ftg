@@ -1,0 +1,186 @@
+# ==================================================================
+#  OPEN SPACE · prolog · Poddasze prezesa · poniedziałek, 26 października
+# ==================================================================
+#
+#  Format jak w levels/lodz10/dialogi.txt:
+#   [klucz]  blok · [klucz] tekst  cel jednowierszowy · kto: tekst · - opcja
+#  SPRAWDZANIE: npm run teksty
+# ==================================================================
+
+
+# ------------------------------------------------------------------
+#  07:40 · Pobudka
+# ------------------------------------------------------------------
+
+[start]
+narrator: Poniedziałek, 7:40. Budzisz się w śpiworze na poddaszu własnego domu. We włosach masz wełnę mineralną.
+mysl: Miał być jeden pas przed snem. Kończyłem o drugiej. Gdzieś pika laptop.
+
+[cel.laptop] Sprawdź laptopa. Coś pika.
+[cel.whatsapp] Wyślij na grupę mema «niemdziela wieczur i humor popsuty».
+[cel.wyjdz] Wyjdź z poddasza przez klapę w podłodze.
+[cel.belka] Klapa jest przybita listwą. Znajdź coś do podważenia.
+[cel.welna] Drabina leży na dole. Zrzuć coś miękkiego na lądowanie.
+[cel.laptop.zabierz] Weź laptopa. Bez niego to nie wyjście, tylko ucieczka.
+[cel.skok] Zejdź przez klapę. Biuro czeka.
+
+
+# ------------------------------------------------------------------
+#  Laptop
+# ------------------------------------------------------------------
+
+[laptop.mail]
+narrator: Poczta. Jedna nowa wiadomość, wysłana w niedzielę o 23:47.
+bozena: Panie Prezesie, przypominam: od dziś obowiązuje polityka «Powrót do biura». Pana obecność ma wymiar symboliczny.
+bozena: Stand-up o 9:15 w Persji. Proszę o potwierdzenie.
+- Odpisz: «Będę.»
+- Odpisz: «Jestem na wełnie. Będę zdalnie.»
+
+[laptop.mail.bede]
+narrator: Wysłane. Ania odpisuje w ciągu czterech sekund: «Dziękuję. Wpisałam do protokołu».
+mysl: Zanim zejdę, mem na grupę. Inaczej pomyślą, że wełna mnie wchłonęła.
+
+[laptop.mail.zdalnie]
+narrator: Odpowiedź przychodzi, zanim zdążysz zdjąć rękę z klawiatury.
+bozena: Polityka obowiązuje wszystkich. Podpisał ją Pan w czwartek. Długopisem z logo.
+mysl: Faktycznie. Dobry długopis. No to jadę. Ale najpierw mem na grupę.
+
+[laptop.grupa]
+narrator: WhatsApp, grupa «Open Space +10». Ostatnia wiadomość z 23:58: «Prezes, żyjesz?».
+narrator: W galerii czeka mem z wczoraj: «niemdziela wieczur i humor popsuty».
+mysl: Pasuje idealnie. Tylko jaki podpis? Coś godnego stanowiska.
+- Wyślij mema bez komentarza.
+- Wyślij z podpisem: «Wełna 1 : Prezes 0».
+- Wyślij z podpisem: «Od dziś w biurze. Symbolicznie».
+
+[laptop.grupa.1]
+narrator: Wysłane. Dwa niebieskie ptaszki po sekundzie. Sześć osób pisze…
+grupa: Marcin: Prezes, jest poniedziałek.
+grupa: Kasia: Dla prezesa niedziela trwa od marca. Mam tabelkę.
+
+[laptop.grupa.2]
+narrator: Wysłane. Mem dostaje trzy reakcje, zanim zdążysz zamknąć okno.
+grupa: Marcin: To który to już miesiąc?
+grupa: Kasia: Siódmy. Ja liczę. Mam tabelkę.
+grupa: Radek: Prezes, wełnę da się kłaść z AI. Mam demo. Nie działa na strychu, bo nie ma Wi-Fi.
+
+[laptop.grupa.3]
+narrator: Wysłane. Na grupie zapada cisza. Potem wszyscy naraz.
+grupa: Magda: Symbolicznie, czyli jak?
+grupa: Kasia: Czyli tak, jak kładzie wełnę.
+
+[laptop.pakuj]
+narrator: Zamykasz laptopa i wkładasz go pod pachę. Dioda jeszcze chwilę mruga, jakby chciała coś dodać.
+
+[laptop.spakowany]
+mysl: Na skrzynce został tylko kubek po wczorajszej kawie. Niech zostanie. Ociepla.
+
+
+# ------------------------------------------------------------------
+#  Klapa
+# ------------------------------------------------------------------
+
+[klapa]
+narrator: Klapa strychowa. W poprzek przybita listwa, czterema gwoździami. Od środka.
+mysl: W lutym wiało. Rozwiązałem problem systemowo.
+mysl: Rękami tego nie ruszę. Potrzebuję dźwigni.
+
+[klapa.znowu]
+mysl: Listwa trzyma lepiej niż wszystkie moje postanowienia noworoczne. Potrzebuję dźwigni.
+
+[klapa.podwaz]
+narrator: Wsuwasz belkę pod listwę i naciskasz. Gwoździe skrzypią, listwa odskakuje, klapa opada w dół.
+mysl: Dźwignia dwustronna. Archimedes byłby dumny. Inspektor BHP już mniej.
+
+[klapa.drabina]
+narrator: Składana drabina rozkłada się z rozmachem, odrywa od zawiasów i z hukiem ląduje na korytarzu.
+narrator: Z dołu widać nowe panele, trzy metry niżej. Drabina leży na nich w trzech częściach.
+mysl: Panele kładłem w maju. Twarde.
+
+[klapa.dziura]
+mysl: Trzy metry. Na dole twarde panele. Potrzebuję czegoś miękkiego. Czegoś, czego mam tu za dużo.
+
+[klapa.welna]
+narrator: Zrzucasz rolkę wełny. Ląduje na panelach z głuchym «puf» i rozkłada się w miękką kupkę.
+mysl: Pierwszy raz od siedmiu miesięcy wełna jest tam, gdzie powinna.
+
+[klapa.bez.laptopa]
+mysl: Bez laptopa? Ania wyśle kolejnego maila. A potem drugiego, z tym pierwszym w załączniku.
+
+[klapa.skok]
+mysl: Pod spodem wełna. W ręce laptop. Za plecami siedem miesięcy pracy.
+- Skacz.
+- Jeszcze chwilę.
+
+[klapa.jeszcze]
+mysl: Chwila. Jeszcze się nie pożegnałem z kalenicą.
+
+[klapa.lot]
+narrator: Skaczesz. Wełna łagodzi upadek, laptop przetrwał, kolano prawie.
+mysl: 7:58. Zdążę. Swędzi mnie wszystko, ale zdążę.
+
+[klapa.lot.pozno]
+narrator: Skaczesz. Wełna łagodzi upadek, laptop przetrwał, kolano prawie.
+mysl: Jest później, niż planowałem. Ale dach jest cieplejszy niż wczoraj. Priorytety.
+
+
+# ------------------------------------------------------------------
+#  Belki i wełna
+# ------------------------------------------------------------------
+
+[belki]
+narrator: Stos belek, kupionych «z zapasem». Bierzesz jedną.
+mysl: Nie wiem jeszcze po co. Ale prezes z belką wygląda decyzyjnie.
+
+[belki.dzwignia]
+narrator: Wybierasz najprostszą belkę ze stosu. Pachnie lasem i fakturą VAT.
+mysl: Idealna dźwignia. Albo przyszła jętka. Zobaczymy.
+
+[belki.masz]
+mysl: Już mam belkę. Dwie to byłaby budowa.
+
+[belki.juz]
+mysl: Belki zostają. Wrócę do nich w weekend. W każdy weekend.
+
+[welna]
+narrator: Paczki wełny mineralnej. Jedna rozpakowana, ciepło żółta, cicho kusząca.
+mysl: Jeden pas. Dziesięć minut. Nikt się nie dowie.
+- Połóż jeszcze jeden pas.
+- Nie. Biuro.
+
+[welna.nie]
+mysl: Nie. Jestem prezesem. Mam silną wolę. I zaplanowany stand-up.
+
+[welna.pas]
+narrator: Docinasz, wciskasz między krokwie, wygładzasz. Mija dwadzieścia pięć minut.
+mysl: Piękny. Równy. Swędzący. Tak, warto było.
+
+[welna.pas.znowu]
+narrator: Kolejny pas. Kolejne dwadzieścia pięć minut. Laptop pika z wyrzutem.
+mysl: Ania tego nie zrozumie. Ania nigdy nie kładła wełny.
+
+[welna.wez]
+narrator: Bierzesz rolkę wełny pod pachę. Swędzi już przez koszulę.
+
+[welna.masz]
+mysl: Mam rolkę. Druga by mi zasłoniła widok na przyszłość.
+
+[welna.juz]
+mysl: Reszta wełny poczeka do soboty. Wełna jest cierpliwa. Bardziej niż Ania.
+
+
+# ------------------------------------------------------------------
+#  Rekwizyty
+# ------------------------------------------------------------------
+
+[okno]
+narrator: Okno dachowe, 55 na 78 centymetrów. Widok na Pawianice.
+mysl: Sprawdzałem w marcu. Przechodzi głowa, ramiona już nie. Nie powtarzam.
+
+[spiwor]
+narrator: Śpiwór, poduszka i odcisk prezesa.
+mysl: Prezes nie nocuje na poddaszu. Prezes «zostaje dłużej».
+
+[kreski]
+narrator: Deska przybita do szczytu. Kreski, grupami po pięć. Na dole napis: «dzień 214».
+mysl: Dach ma osiemdziesiąt metrów. Zostało mi trzydzieści. Przy obecnym tempie wyrobię się przed emeryturą.

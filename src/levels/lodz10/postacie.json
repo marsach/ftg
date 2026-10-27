@@ -1,0 +1,10 @@
+{
+  "narrator": { "style": "narr" },
+  "mysl": { "name": "Ty", "role": "w myślach", "style": "mysl" },
+  "bozena": { "name": "Ania", "role": "Head of People Operations Excellence" },
+  "kuba": { "name": "Smol@r", "role": "IT" },
+  "ola": { "name": "Kasia", "role": "Marketing" },
+  "marek": { "name": "Marcin", "role": "Finanse" },
+  "ania": { "name": "Magda", "role": "UX" },
+  "radek": { "name": "Radek", "role": "Head of AI Transformation" }
+}

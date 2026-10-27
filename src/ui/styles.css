@@ -1,0 +1,154 @@
+/* Układ: pełnoekranowa scena; identyfikator (zegar + cel) w lewym górnym rogu,
+   minimapa w prawym górnym, dialog przy dolnej krawędzi. */
+:root {
+  --bg: #1b1f24;
+  --paper: #f4f3ef;
+  --ink: #1f252c;
+  --ink-soft: #5d6670;
+  --panel: rgba(24, 28, 34, 0.94);
+  --panel-ink: #ebe8e2;
+  --muted: #9aa4ae;
+  --line: rgba(235, 232, 226, 0.14);
+  --accent: #e8643c;
+  --f-narr: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --f-ui: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; overflow: hidden; }
+body { background: var(--bg); color: var(--panel-ink); font-family: var(--f-ui); font-size: 14px; }
+#app { position: fixed; inset: 0; touch-action: none; }
+
+/* ---------- identyfikator ---------- */
+.badge {
+  position: fixed;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  left: max(16px, env(safe-area-inset-left, 0px));
+  width: 186px;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  user-select: none;
+}
+.badge-clip { height: 8px; background: var(--accent); }
+.badge-body { padding: 8px 12px 10px; display: grid; gap: 2px; }
+.badge-time { font: 600 28px/1 var(--f-mono); letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
+.badge-date { font: 500 10px/1.3 var(--f-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); }
+.badge-obj { border-top: 1px dashed #c9c5bc; margin-top: 6px; padding-top: 7px; font-size: 12.5px; line-height: 1.35; }
+.badge-obj b { display: block; font: 600 9.5px/1.4 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+
+.help {
+  position: fixed;
+  left: max(16px, env(safe-area-inset-left, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  font: 500 11px/1.6 var(--f-mono);
+  color: var(--muted);
+  background: rgba(24, 28, 34, 0.7);
+  padding: 8px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+}
+.help kbd { font: inherit; color: var(--panel-ink); border: 1px solid var(--line); border-radius: 3px; padding: 0 4px; }
+
+/* ---------- minimapa ---------- */
+.minimap {
+  position: fixed;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--paper);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  cursor: zoom-in;
+  line-height: 0;
+}
+.minimap.big { cursor: zoom-out; }
+.minimap canvas { display: block; }
+
+/* ---------- podpowiedź i przycisk dotykowy ---------- */
+.prompt {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  font: 500 12px/1 var(--f-ui);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 6px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+.prompt kbd { font: 600 11px/1 var(--f-mono); background: var(--ink); color: var(--paper); border-radius: 4px; padding: 2px 5px; margin-right: 6px; }
+.act {
+  all: unset;
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  font: 600 14px var(--f-ui);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 12px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- dialog ---------- */
+.dialog {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: min(760px, calc(100% - 32px));
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 20px 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+.d-name { font: 600 11px/1.4 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); min-height: 15px; }
+.d-name span { color: var(--muted); letter-spacing: 0.06em; font-weight: 500; }
+.d-text { margin-top: 6px; font-size: 17px; line-height: 1.5; min-height: 52px; text-wrap: pretty; }
+.d-text.narr { font-family: var(--f-narr); font-style: italic; font-size: 20px; line-height: 1.45; }
+.d-text.mysl { font-family: var(--f-narr); font-style: italic; font-size: 19px; color: #c9d2da; }
+.d-choices { display: grid; gap: 6px; margin-top: 12px; }
+.d-choices:empty { display: none; }
+.d-choices button { all: unset; cursor: pointer; font: 500 15px/1.35 var(--f-ui); padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; color: var(--panel-ink); }
+.d-choices button:hover, .d-choices button:focus-visible { border-color: var(--accent); background: rgba(232, 100, 60, 0.1); }
+.d-choices button i { font: 600 11px var(--f-mono); font-style: normal; color: var(--accent); margin-right: 8px; }
+.d-more { position: absolute; right: 14px; bottom: 10px; font: 500 10px var(--f-mono); color: var(--muted); letter-spacing: 0.08em; }
+
+/* ---------- plansze ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(18, 21, 25, 0.62);
+  padding: 24px max(16px, env(safe-area-inset-right, 0px)) 24px max(16px, env(safe-area-inset-left, 0px));
+}
+.card { background: var(--paper); color: var(--ink); border-radius: 8px; max-width: 440px; width: 100%; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45); }
+.card .badge-clip { height: 10px; }
+.card-body { padding: 22px 24px 24px; display: grid; gap: 12px; }
+.card small { font: 600 10px var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.card h1 { margin: 0; font: 600 30px/1.1 var(--f-ui); letter-spacing: -0.01em; text-wrap: balance; }
+.card p { margin: 0; font-family: var(--f-narr); font-style: italic; font-size: 18px; line-height: 1.45; color: #3a424b; }
+.card ul { margin: 0; padding: 0; list-style: none; font: 500 12px/1.8 var(--f-mono); color: var(--ink-soft); }
+.card kbd { font: 600 11px var(--f-mono); border: 1px solid #c9c5bc; border-radius: 3px; padding: 0 4px; color: var(--ink); }
+.card button { all: unset; cursor: pointer; justify-self: start; font: 600 14px var(--f-ui); background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 6px; }
+.card button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 560px) {
+  .badge { width: 156px; }
+  .badge-time { font-size: 24px; }
+  .d-text { font-size: 16px; }
+  .d-text.narr { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
