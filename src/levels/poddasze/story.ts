@@ -2,11 +2,12 @@
  * Fabuła prologu „Poddasze prezesa”: siódmy miesiąc ocieplania dachu,
  * pierwszy dzień obowiązkowego powrotu do biura.
  *
- * Kolejność: laptop (mail, potem wiadomość na grupę) → klapa przybita listwą →
- * belka jako dźwignia → drabina spada → wełna na dół → skok.
+ * Kolejność: laptop (mail; mem na grupę nie przechodzi, bo nie ma zasięgu) →
+ * taboret pod oknem dachowym (zasięg) → klapa przybita listwą → belka jako dźwignia →
+ * drabina spada → wełna na dół → odkurzacz (pełny worek, zapasowe na płytach GK) → skok.
  * Gracz może zacząć od klapy; cel na identyfikatorze zawsze wynika z flag (`nextGoal`).
  */
-import { beamMesh, woolMesh } from '../../prefabs/attic';
+import { beamMesh, stoolHeld, woolMesh } from '../../prefabs/attic';
 import type { Speakers } from '../../story/Dialogue';
 import { defineStory, type StoryAPI, type Widen } from '../../story/Story';
 import texts from './dialogi.txt?raw';
@@ -19,28 +20,60 @@ const flags = {
   triedHatch: false,
   hatchOpen: false,
   woolDown: false,
-  /** co prezes niesie: '' | 'belka' | 'welna' */
+  /** mem nie przeszedł (brak zasięgu), laptop pod pachą */
+  noSignal: false,
+  stoolAtWindow: false,
+  /** odkurzacz kichnął pyłem: worek pełny */
+  triedVacuum: false,
+  /** zapasowy worek wzięty z płyt GK */
+  bag: false,
+  vacuumed: false,
+  /** co prezes niesie: '' | 'belka' | 'welna' | 'taboret' */
   holding: '',
   /** ile pasów wełny położył „po drodze” */
   extraStrips: 0,
 };
 
 type S = StoryAPI<Widen<typeof flags>>;
+type Holding = '' | 'belka' | 'welna' | 'taboret';
 
 /** Ustawia cel na identyfikatorze na podstawie tego, co już zrobione. */
 function nextGoal(s: S): void {
   const f = s.flags;
   if (!f.get('mailRead') && !f.get('triedHatch')) return s.objective('cel.laptop');
-  if (f.get('mailRead') && !f.get('laptop')) return s.objective('cel.whatsapp');
+  if (f.get('mailRead') && !f.get('laptop')) {
+    if (!f.get('noSignal')) return s.objective('cel.whatsapp');
+    const stoolReady = f.get('stoolAtWindow');
+    return s.objective(stoolReady ? 'cel.zasieg.wejdz' : 'cel.zasieg');
+  }
   if (!f.get('hatchOpen')) return f.get('triedHatch') ? s.objective('cel.belka') : s.objective('cel.wyjdz');
   if (!f.get('woolDown')) return s.objective('cel.welna');
   if (!f.get('laptop')) return s.objective('cel.laptop.zabierz');
+  if (!f.get('vacuumed')) {
+    const bag = f.get('bag'),
+      fullBag = f.get('triedVacuum');
+    return s.objective(bag ? 'cel.odkurz.worek' : fullBag ? 'cel.worek' : 'cel.odkurz');
+  }
   s.objective('cel.skok');
 }
 
-function hold(s: S, what: '' | 'belka' | 'welna'): void {
-  s.flags.set('holding', what);
-  s.player.hold(what === 'belka' ? beamMesh() : what === 'welna' ? woolMesh() : null);
+function hold(s: S, what: Holding): void {
+  const f = s.flags;
+  // taboret odłożony gdziekolwiek indziej niż pod oknem wraca na swoje miejsce
+  if (f.get('holding') === 'taboret' && what !== 'taboret') s.obj('taboret').state.taken = f.get('stoolAtWindow');
+  if (what === 'taboret') s.obj('taboret').state.taken = true;
+  f.set('holding', what);
+  s.player.hold(what === 'belka' ? beamMesh() : what === 'welna' ? woolMesh() : what === 'taboret' ? stoolHeld() : null);
+}
+
+/** Z taboretu pod oknem: zasięg, mem na grupę, laptop spakowany. */
+async function sendMeme(s: S): Promise<void> {
+  await s.say('okno.zasieg');
+  const choice = await s.say('laptop.grupa');
+  await s.say(choice === 0 ? 'laptop.grupa.1' : choice === 1 ? 'laptop.grupa.2' : 'laptop.grupa.3');
+  await s.say('laptop.pakuj');
+  s.flags.set('laptop', true);
+  nextGoal(s);
 }
 
 /** Zegar do przodu o `minutes` (każdy „jeszcze jeden pas wełny”). */
@@ -68,10 +101,10 @@ export const poddaszeStory = defineStory({
   },
 
   outro: {
-    eyebrow: 'Koniec prologu',
+    eyebrow: 'Koniec prologu · ciąg dalszy wkrótce',
     title: 'Prezes opuścił poddasze',
-    text: 'Lądowanie miękkie. Wełna gryzie. Tymczasem w biurze na dziesiątym piętrze…',
-    button: 'Do biura',
+    text: 'Lądowanie miękkie. Wełna gryzie. Tymczasem w biurze na dziesiątym piętrze trwa jeszcze remont. Otwieramy wkrótce. Do tego czasu prezes pracuje… symbolicznie.',
+    button: 'Jeszcze raz',
   },
 
   async start(s) {
@@ -91,10 +124,11 @@ export const poddaszeStory = defineStory({
           f.set('mailRead', true);
           return nextGoal(s);
         }
-        const choice = await s.say('laptop.grupa');
-        await s.say(choice === 0 ? 'laptop.grupa.1' : choice === 1 ? 'laptop.grupa.2' : 'laptop.grupa.3');
-        await s.say('laptop.pakuj');
-        f.set('laptop', true);
+        if (f.get('noSignal')) return s.say('laptop.pod.pacha');
+        await s.say('laptop.zasieg');
+        const stoolReady = f.get('stoolAtWindow');
+        await s.say(stoolReady ? 'laptop.zasieg.stoi' : 'laptop.zasieg.taboret');
+        f.set('noSignal', true);
         s.obj('laptop').state.taken = true;
         nextGoal(s);
       },
@@ -127,7 +161,12 @@ export const poddaszeStory = defineStory({
           s.obj('klapa').state.wool = true;
           return nextGoal(s);
         }
-        if (!f.get('laptop')) return s.say('klapa.bez.laptopa');
+        const underArm = f.get('noSignal');
+        if (!f.get('laptop')) return s.say(underArm ? 'klapa.bez.mema' : 'klapa.bez.laptopa');
+        if (!f.get('vacuumed')) {
+          await s.say('klapa.wlosy');
+          return nextGoal(s);
+        }
         if ((await s.say('klapa.skok')) !== 0) return s.say('klapa.jeszcze');
         const late = f.get('extraStrips') > 0;
         await s.say(late ? 'klapa.lot.pozno' : 'klapa.lot');
@@ -168,7 +207,66 @@ export const poddaszeStory = defineStory({
       },
     },
 
-    okno: { label: 'Okno dachowe', radius: 2.0, use: (s) => s.say('okno') },
+    okno: {
+      label: 'Okno dachowe',
+      radius: 2.0,
+      async use(s) {
+        const f = s.flags;
+        const waiting = f.get('noSignal') && !f.get('laptop');
+        if (f.get('holding') === 'taboret') {
+          f.set('stoolAtWindow', true);
+          s.obj('okno').state.stool = true;
+          hold(s, '');
+          await s.say('okno.taboret');
+          return waiting ? sendMeme(s) : nextGoal(s);
+        }
+        if (waiting) return f.get('stoolAtWindow') ? sendMeme(s) : s.say('okno.za.nisko');
+        await s.say('okno');
+      },
+    },
+
+    taboret: {
+      label: 'Taboret',
+      async use(s) {
+        const f = s.flags;
+        if (f.get('stoolAtWindow')) return s.say('taboret.juz');
+        if (f.get('holding') === 'taboret') return s.say('taboret.masz');
+        const needed = f.get('noSignal');
+        await s.say(needed ? 'taboret.zasieg' : 'taboret');
+        hold(s, 'taboret');
+      },
+    },
+
+    odkurzacz: {
+      label: 'Odkurzacz',
+      async use(s) {
+        const f = s.flags;
+        if (f.get('vacuumed')) return s.say('odkurzacz.juz');
+        if (f.get('bag')) {
+          await s.say('odkurzacz.worek');
+          f.set('vacuumed', true);
+          later(s, 5);
+          return nextGoal(s);
+        }
+        if (f.get('triedVacuum')) return s.say('odkurzacz.pelny');
+        await s.say('odkurzacz');
+        f.set('triedVacuum', true);
+        nextGoal(s);
+      },
+    },
+
+    plyty: {
+      label: 'Płyty GK',
+      async use(s) {
+        const f = s.flags;
+        if (f.get('bag') || f.get('vacuumed')) return s.say('plyty.po');
+        const fullBag = f.get('triedVacuum');
+        await s.say(fullBag ? 'plyty.worek' : 'plyty');
+        f.set('bag', true);
+        nextGoal(s);
+      },
+    },
+
     spiwor: { label: 'Śpiwór', use: (s) => s.say('spiwor') },
     kreski: { label: 'Deska z kreskami', use: (s) => s.say('kreski') },
   },

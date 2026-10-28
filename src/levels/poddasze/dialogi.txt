@@ -18,10 +18,15 @@ mysl: Miał być jeden pas przed snem. Kończyłem o drugiej. Gdzieś pika lapto
 
 [cel.laptop] Sprawdź laptopa. Coś pika.
 [cel.whatsapp] Wyślij na grupę mema «niemdziela wieczur i humor popsuty».
+[cel.zasieg] Zasięg jest tylko wysoko pod oknem dachowym. Postaw tam taboret.
+[cel.zasieg.wejdz] Taboret stoi pod oknem. Wejdź na niego i wyślij mema.
 [cel.wyjdz] Wyjdź z poddasza przez klapę w podłodze.
 [cel.belka] Klapa jest przybita listwą. Znajdź coś do podważenia.
 [cel.welna] Drabina leży na dole. Zrzuć coś miękkiego na lądowanie.
 [cel.laptop.zabierz] Weź laptopa. Bez niego to nie wyjście, tylko ucieczka.
+[cel.odkurz] Wyglądasz jak yeti z hurtowni budowlanej. Odkurz się.
+[cel.worek] Odkurzacz ma pełny worek. Zapasowe leżą na płytach GK.
+[cel.odkurz.worek] Wymień worek w odkurzaczu i odkurz się.
 [cel.skok] Zejdź przez klapę. Biuro czeka.
 
 
@@ -44,6 +49,20 @@ mysl: Zanim zejdę, mem na grupę. Inaczej pomyślą, że wełna mnie wchłonę�
 narrator: Odpowiedź przychodzi, zanim zdążysz zdjąć rękę z klawiatury.
 bozena: Polityka obowiązuje wszystkich. Podpisał ją Pan w czwartek. Długopisem z logo.
 mysl: Faktycznie. Dobry długopis. No to jadę. Ale najpierw mem na grupę.
+
+[laptop.zasieg]
+narrator: Otwierasz WhatsAppa. Grupa «Open Space +10» kręci kółkiem. Zero kresek.
+mysl: Zasięg na poddaszu jest tylko pod oknem dachowym. I tylko wysoko. Sprawdzałem w marcu.
+narrator: Bierzesz laptopa pod pachę.
+
+[laptop.zasieg.taboret]
+mysl: Na palcach nie sięgam. Na palcach próbowałem w kwietniu. Potrzebuję taboretu.
+
+[laptop.zasieg.stoi]
+mysl: Dobrze, że taboret już tam stoi. Intuicja prezesa.
+
+[laptop.pod.pacha]
+mysl: Laptop mam pod pachą, mem czeka w kolejce. Zasięg jest pod oknem, wyżej, niż sięgam.
 
 [laptop.grupa]
 narrator: WhatsApp, grupa «Open Space +10». Ostatnia wiadomość z 23:58: «Prezes, żyjesz?».
@@ -107,6 +126,13 @@ mysl: Pierwszy raz od siedmiu miesięcy wełna jest tam, gdzie powinna.
 [klapa.bez.laptopa]
 mysl: Bez laptopa? Ania wyśle kolejnego maila. A potem drugiego, z tym pierwszym w załączniku.
 
+[klapa.bez.mema]
+mysl: Laptop mam, ale mem nie poszedł. Na dole zasięgu jest jeszcze mniej. Najpierw taboret i okno.
+
+[klapa.wlosy]
+narrator: Zerkasz w czarny ekran telefonu. Patrzy na ciebie yeti z hurtowni budowlanej.
+mysl: Wełna we włosach, na brwiach, w kołnierzyku. Ania zrobi z tego slajd. Najpierw odkurzacz.
+
 [klapa.skok]
 mysl: Pod spodem wełna. W ręce laptop. Za plecami siedem miesięcy pracy.
 - Skacz.
@@ -117,10 +143,12 @@ mysl: Chwila. Jeszcze się nie pożegnałem z kalenicą.
 
 [klapa.lot]
 narrator: Skaczesz. Wełna łagodzi upadek, laptop przetrwał, kolano prawie.
-mysl: 7:58. Zdążę. Swędzi mnie wszystko, ale zdążę.
+narrator: Świeżo odkurzona koszula w sekundę zbiera wełnę z powrotem.
+mysl: 7:58. Zdążę. Odkurzanie było symboliczne. Jak moja obecność w biurze.
 
 [klapa.lot.pozno]
 narrator: Skaczesz. Wełna łagodzi upadek, laptop przetrwał, kolano prawie.
+narrator: Świeżo odkurzona koszula w sekundę zbiera wełnę z powrotem.
 mysl: Jest później, niż planowałem. Ale dach jest cieplejszy niż wczoraj. Priorytety.
 
 
@@ -173,6 +201,17 @@ mysl: Reszta wełny poczeka do soboty. Wełna jest cierpliwa. Bardziej niż Ania
 #  Rekwizyty
 # ------------------------------------------------------------------
 
+[okno.za.nisko]
+narrator: Podnosisz laptopa nad głowę. Pół kreski. Mem wisi na «wysyłanie…».
+mysl: Jeszcze pół metra. Gdzieś tu był taboret.
+
+[okno.taboret]
+narrator: Stawiasz taboret pod oknem. Chwieje się na jednej nodze, jak każdy porządny taboret budowlany.
+
+[okno.zasieg]
+narrator: Wchodzisz na taboret i wystawiasz laptopa w stronę okna. Jedna kreska. Dwie. Kółko przestaje się kręcić.
+mysl: Technologia. Kiedyś wystarczyło krzyknąć przez klatkę schodową.
+
 [okno]
 narrator: Okno dachowe, 55 na 78 centymetrów. Widok na Pawianice.
 mysl: Sprawdzałem w marcu. Przechodzi głowa, ramiona już nie. Nie powtarzam.
@@ -184,3 +223,47 @@ mysl: Prezes nie nocuje na poddaszu. Prezes «zostaje dłużej».
 [kreski]
 narrator: Deska przybita do szczytu. Kreski, grupami po pięć. Na dole napis: «dzień 214».
 mysl: Dach ma osiemdziesiąt metrów. Zostało mi trzydzieści. Przy obecnym tempie wyrobię się przed emeryturą.
+
+[taboret]
+narrator: Taboret. Trzy nogi proste, czwarta po przejściach. Cały w kropkach gruntu.
+mysl: Był już stołem, rusztowaniem i krzesłem konferencyjnym. Bierzesz go.
+
+[taboret.zasieg]
+narrator: Bierzesz taboret. Pół metra bliżej nieba.
+mysl: I zasięgu.
+
+[taboret.masz]
+mysl: Mam już taboret. Dwa to byłoby rusztowanie, a na rusztowanie trzeba mieć uprawnienia.
+
+[taboret.juz]
+mysl: Tu stał taboret. Teraz stoi pod oknem. Awansował szybciej niż ktokolwiek w firmie.
+
+
+# ------------------------------------------------------------------
+#  Odkurzacz i płyty GK
+# ------------------------------------------------------------------
+
+[odkurzacz]
+narrator: Odkurzacz budowlany. Włączasz i przykładasz rurę do włosów. Zamiast ssać, kicha ci w twarz białym pyłem.
+mysl: Worek pełny pyłu z cięcia płyt GK. Od kwietnia. Zapasowe worki były gdzieś na płytach.
+
+[odkurzacz.pelny]
+mysl: Z tym workiem odkurzacz tylko rozdmuchuje problem. Jak spotkanie zarządu. Worki są na płytach GK.
+
+[odkurzacz.worek]
+narrator: Wymieniasz worek. Stary waży tyle co pół płyty. Odkurzasz włosy, koszulę, brwi i na wszelki wypadek uszy.
+mysl: Wyglądam jak prezes. Lekko oszołomiony, ale prezes.
+
+[odkurzacz.juz]
+mysl: Odkurzacz zrobił swoje. Najtrudniejsze zlecenie w jego karierze.
+
+[plyty]
+narrator: Sterta płyt GK, 120 na 260. Kupione w kwietniu z dopiskiem «po wełnie». Na wierzchu profile i paczka worków do odkurzacza.
+mysl: Po wełnie, czyli w dwa tysiące trzydziestym. Biorę worek, odkurzacz od dawna o niego prosi.
+
+[plyty.worek]
+narrator: Wyciągasz spod profili paczkę worków do odkurzacza. Zostały dwa. Bierzesz jeden.
+mysl: Drugi na następne siedem miesięcy.
+
+[plyty.po]
+mysl: Płyty poczekają, aż skończę wełnę. Płyty są jeszcze cierpliwsze niż wełna.

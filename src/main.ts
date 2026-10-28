@@ -7,13 +7,15 @@ import { poddaszeStory } from './levels/poddasze/story';
 
 /**
  * Kolejność poziomów: prolog na poddaszu prezesa, potem biuro.
- * `?poziom=biuro` w adresie pomija prolog.
+ * Biuro jest w przeróbce: prolog nie przechodzi dalej (plansza końcowa zaczyna go od nowa),
+ * a `?poziom=biuro` działa tylko w `npm run dev`. Żeby odblokować, przywróć
+ * `next: () => play('biuro')` w poddaszu i usuń warunek DEV przy wyborze poziomu.
  */
 const host = document.getElementById('app')!;
 let game: Game<never> | null = null;
 
 const levels = {
-  poddasze: () => new Game(host, poddasze, poddaszeStory, { next: () => play('biuro') }),
+  poddasze: () => new Game(host, poddasze, poddaszeStory),
   biuro: () => new Game(host, lodz10, lodz10Story),
 };
 type LevelId = keyof typeof levels;
@@ -27,4 +29,4 @@ function play(id: LevelId): void {
 }
 
 const wanted = new URLSearchParams(location.search).get('poziom');
-play(wanted && wanted in levels ? (wanted as LevelId) : 'poddasze');
+play(import.meta.env.DEV && wanted && wanted in levels ? (wanted as LevelId) : 'poddasze');

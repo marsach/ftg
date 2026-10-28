@@ -7,7 +7,20 @@
  */
 import type { LevelDef } from '../../world/level';
 import { prop } from '../../world/prefab';
-import { atticShell, hatch, laptopCrate, roofWindow, sleepingBag, tallyBoard, timberStack, woolRolls, workLamp } from '../../prefabs/attic';
+import {
+  atticShell,
+  drywallStack,
+  hatch,
+  laptopCrate,
+  roofWindow,
+  shopVacuum,
+  sleepingBag,
+  stool,
+  tallyBoard,
+  timberStack,
+  woolRolls,
+  workLamp,
+} from '../../prefabs/attic';
 
 const LENGTH = 12;
 
@@ -29,10 +42,13 @@ export const poddasze: LevelDef = {
     prop(laptopCrate, { id: 'laptop', x: -4.3, z: -2.0 }),
     prop(sleepingBag, { id: 'spiwor', x: -4.4, z: 1.2, ry: Math.PI / 2 }),
     prop(woolRolls, { id: 'welna', x: -1.2, z: -2.8 }),
-    prop(timberStack, { id: 'belki', x: 2.0, z: -2.9, length: 3 }),
+    prop(timberStack, { id: 'belki', x: 2.6, z: -2.9, length: 3 }),
     prop(roofWindow, { id: 'okno', x: -2.6, z: -2.6 }),
     prop(tallyBoard, { id: 'kreski', x: -5.97, z: -0.6, ry: Math.PI / 2 }),
     prop(workLamp, { x: 0.6, z: 1.9, ry: -2.5 }),
+    prop(drywallStack, { id: 'plyty', x: 4.9, z: -1.3, ry: Math.PI / 2 }),
+    prop(shopVacuum, { id: 'odkurzacz', x: 5.0, z: 1.0, ry: -Math.PI / 2 }),
+    prop(stool, { id: 'taboret', x: -1.4, z: 1.8, ry: 0.4 }),
   ],
   npcs: [],
   triggers: [],

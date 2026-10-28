@@ -207,7 +207,7 @@ export const timberStack = definePrefab<{ length?: number }>('timberStack', (c, 
   c.block(0, 0, L, 0.8);
 });
 
-/** Paczki wełny mineralnej w folii, kilka rozpakowanych rolek. */
+/** Paczki wełny mineralnej w folii, piramida sześciu rolek i jedna rozpakowana. */
 export const woolRolls = definePrefab('woolRolls', (c) => {
   for (const [x, z] of [
     [-0.4, -0.15],
@@ -218,24 +218,111 @@ export const woolRolls = definePrefab('woolRolls', (c) => {
     box(c.g, 0.6, 0.12, 0.43, mat(P.accent), x, 0.3, z, { cast: false });
   }
   box(c.g, 0.6, 0.45, 0.42, mat(0xd9dee2), -0.1, 0.675, -0.15);
-  for (const [x, z] of [
-    [0.75, 0.2],
-    [0.7, -0.35],
-  ]) {
-    const roll = cyl(c.g, 0.2, 0.2, 0.6, mat(WOOL), x, 0.2, z, 12);
-    roll.rotation.x = Math.PI / 2;
-  }
-  c.block(0.1, 0, 1.6, 0.9);
+  // sześć rolek w folii, piramida 3-2-1, osie w stronę połaci
+  const r = 0.2;
+  for (let row = 0; row < 3; row++)
+    for (let i = 0; i < 3 - row; i++) {
+      const x = 0.85 + (i + row / 2) * 2 * r,
+        y = r + row * r * Math.sqrt(3);
+      cyl(c.g, r, r, 0.95, mat(0xd9dee2), x, y, -0.05, 14).rotation.x = Math.PI / 2;
+      cyl(c.g, r + 0.005, r + 0.005, 0.2, mat(P.accent), x, y, -0.05, 14, { cast: false }).rotation.x = Math.PI / 2;
+    }
+  // rozpakowana: rolka i odwinięty kawałek na podłodze
+  cyl(c.g, 0.17, 0.17, 0.6, mat(WOOL), 0.45, 0.17, 0.42, 12).rotation.z = Math.PI / 2;
+  box(c.g, 0.6, 0.06, 0.45, mat(WOOL), 0.45, 0.03, 0.75, { cast: false });
+  c.block(0.6, 0.05, 2.6, 1.0);
 });
 
-/** Okno dachowe w dalszej połaci; prefab stawiaj pod oknem (y = 0), okno jest nad nim. */
+/** Sterta płyt GK na przekładkach, na wierzchu profile i paczka worków do odkurzacza. Długość wzdłuż lokalnej osi X. */
+export const drywallStack = definePrefab('drywallStack', (c) => {
+  for (const x of [-1.05, 0, 1.05]) box(c.g, 0.08, 0.08, 1.2, mat(WOOD_DARK), x, 0.04, 0);
+  // płyty paczkami po kilka, każda paczka trochę krzywo; dwie zielone (do łazienki) na wierzchu
+  const n = 8;
+  for (let i = 0; i < n; i++) {
+    const color = i >= n - 2 ? 0x9fc3a4 : i % 2 ? 0xdedcd4 : 0xd2d0c7;
+    box(c.g, 2.6, 0.025, 1.2, mat(color), Math.sin(i * 2.3) * 0.04, 0.0925 + i * 0.025, Math.cos(i * 1.7) * 0.03);
+  }
+  const top = 0.08 + n * 0.025;
+  for (const z of [-0.35, -0.27, -0.19]) box(c.g, 2.4, 0.05, 0.05, mat(P.steel), 0.05, top + 0.025, z);
+  box(c.g, 0.3, 0.07, 0.22, mat(0xf2ead8), 0.75, top + 0.035, 0.25);
+  box(c.g, 0.31, 0.02, 0.06, mat(P.accent), 0.75, top + 0.06, 0.25, { cast: false });
+  c.block(0, 0, 2.7, 1.3);
+});
+
+/** Odkurzacz budowlany: zbiornik na kółkach, wąż łukiem do ssawki, zwinięty kabel. */
+export const shopVacuum = definePrefab('shopVacuum', (c) => {
+  cyl(c.g, 0.22, 0.2, 0.45, mat(0x5d646c), 0, 0.3, 0, 16);
+  cyl(c.g, 0.23, 0.23, 0.14, mat(P.note), 0, 0.59, 0, 16);
+  box(c.g, 0.22, 0.05, 0.05, mat(P.dark), 0, 0.69, 0);
+  for (const [x, z] of [
+    [-0.15, -0.15],
+    [0.15, -0.15],
+    [-0.15, 0.15],
+    [0.15, 0.15],
+  ])
+    cyl(c.g, 0.04, 0.04, 0.03, mat(P.dark), x, 0.04, z, 8).rotation.z = Math.PI / 2;
+  const hose = new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.035, 6, 16, Math.PI), mat(P.dark));
+  hose.position.set(0.45, 0.2, 0);
+  hose.castShadow = true;
+  c.g.add(hose);
+  box(c.g, 0.05, 0.2, 0.05, mat(P.dark), 0.75, 0.1, 0);
+  box(c.g, 0.1, 0.03, 0.28, mat(P.dark), 0.75, 0.015, 0);
+  const cable = new THREE.Mesh(new THREE.TorusGeometry(0.12, 0.012, 4, 16), mat(0xe8643c));
+  cable.rotation.x = Math.PI / 2;
+  cable.position.set(-0.2, 0.012, 0.32);
+  c.g.add(cable);
+  c.block(0.25, 0, 1.0, 0.55);
+});
+
+/** Taboret budowlany w kropkach farby (też do niesienia w dłoni i pod oknem). */
+export function stoolMesh(): THREE.Group {
+  const g = new THREE.Group();
+  box(g, 0.34, 0.04, 0.34, mat(WOOD), 0, 0.45, 0);
+  for (const [sx, sz] of [
+    [-1, -1],
+    [1, -1],
+    [1, 1],
+    [-1, 1],
+  ]) {
+    const leg = box(g, 0.04, 0.45, 0.04, mat(WOOD_DARK), sx * 0.13, 0.225, sz * 0.13);
+    leg.rotation.set(-sz * 0.08, 0, sx * 0.08);
+  }
+  for (const z of [-0.14, 0.14]) box(g, 0.3, 0.03, 0.03, mat(WOOD_DARK), 0, 0.15, z);
+  for (const [x, z] of [
+    [0.08, 0.05],
+    [-0.1, -0.07],
+    [0.02, -0.12],
+    [-0.05, 0.11],
+  ])
+    cyl(g, 0.025, 0.025, 0.005, mat(P.paper), x, 0.473, z, 8, { cast: false });
+  return g;
+}
+
+/** Taboret. Stan: `taken` (gracz go niesie albo stoi pod oknem). Bez kolizji, jak śpiwór. */
+export const stool = definePrefab('stool', (c) => {
+  c.state.taken = false;
+  const s = stoolMesh();
+  c.g.add(s);
+  c.animate(() => (s.visible = c.state.taken !== true));
+});
+
+/**
+ * Okno dachowe w dalszej połaci; prefab stawiaj pod oknem (y = 0), okno jest nad nim.
+ * Stan: `stool` (pod oknem stoi taboret).
+ */
 export const roofWindow = definePrefab('roofWindow', (c) => {
+  c.state.stool = false;
   // współrzędne lokalne: okno siedzi na połaci -Z, środek prefabu w z = -2.6
   const g = new THREE.Group();
   g.position.z = 2.6;
   onSlope(g, -1, 0, 0.75, 0.2, 0.45, 0.72, 0.02, mat(0xf1efe9));
   onSlope(g, -1, 0, 0.6, 0.21, 0.47, 0.7, 0.02, mat(0xbcd8ea, { emissive: 0x6b8fa8 }));
   c.g.add(g);
+  const s = stoolMesh();
+  s.position.z = 0.7;
+  s.rotation.y = 0.3;
+  c.g.add(s);
+  c.animate(() => (s.visible = c.state.stool === true));
 });
 
 /** Śpiwór i poduszka. Bez kolizji: można po nim przejść (i gracz zaczyna obok niego). */
@@ -283,6 +370,13 @@ export function beamMesh(): THREE.Mesh {
   m.position.set(0, -0.02, 0.35);
   m.castShadow = true;
   return m;
+}
+
+/** Taboret do niesienia w dłoni. */
+export function stoolHeld(): THREE.Group {
+  const g = stoolMesh();
+  g.position.set(-0.05, -0.5, 0.15);
+  return g;
 }
 
 /** Rolka wełny do niesienia w dłoni. */
