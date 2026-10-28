@@ -17,7 +17,7 @@ Sterowanie: klik lub WASD (chodzenie), E (rozmowa, interakcja), spacja (dalej),
 1–9 (wybór opcji), M (mapa piętra), kółko myszy (przybliżenie).
 
 Gra zaczyna się prologiem **„Poddasze prezesa”** (`levels/poddasze/`): siódmy miesiąc
-kładzenia wełny, pierwszy dzień obowiązkowego powrotu do biura. Laptop (mail od Ani,
+kładzenia wełny, niedziela wieczorem przed pierwszym dniem obowiązkowego powrotu do biura. Laptop (mail od Ani,
 mem „niemdziela wieczur i humor popsuty” na grupę, zasięg tylko z taboretu pod oknem),
 klapa przybita listwą, belka jako dźwignia, wełna na miękkie lądowanie, odkurzacz
 z pełnym workiem (zapasowe leżą na płytach GK). Na razie prolog nie przechodzi do biura,

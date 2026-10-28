@@ -38,7 +38,7 @@ export const poddasze: LevelDef = {
   playerLook: { shirt: 0x9b3b32, pants: 0x3b4f6e, hair: 0x8e8a84 },
   props: [
     prop(atticShell, { x: 0, z: 0, length: LENGTH, done: 0.6 }),
-    prop(hatch, { id: 'klapa', x: 3.8, z: 1.3 }),
+    prop(hatch, { id: 'klapa', x: 3.8, z: 1.6 }),
     prop(laptopCrate, { id: 'laptop', x: -4.3, z: -2.0 }),
     prop(sleepingBag, { id: 'spiwor', x: -4.4, z: 1.2, ry: Math.PI / 2 }),
     prop(woolRolls, { id: 'welna', x: -1.2, z: -2.8 }),
@@ -52,6 +52,6 @@ export const poddasze: LevelDef = {
   ],
   npcs: [],
   triggers: [],
-  clock: { start: [7, 40], stopAt: [8, 55], secondsPerMinute: 4 },
-  hud: { date: 'pon., 26.10.2026', place: 'poddasze prezesa' },
+  clock: { start: [18, 0], stopAt: [19, 15], secondsPerMinute: 4 },
+  hud: { date: 'niedz., 25.10.2026', place: 'poddasze prezesa' },
 };

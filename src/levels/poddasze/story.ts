@@ -89,9 +89,9 @@ export const poddaszeStory = defineStory({
   flags,
 
   intro: {
-    eyebrow: 'Prolog · poniedziałek · 07:40',
+    eyebrow: 'Prolog · niedziela · 18:00',
     title: 'Poddasze prezesa',
-    text: 'Siódmy miesiąc ocieplania dachu. Miał być tylko jeden pas wełny przed pracą. Dziś pierwszy dzień obowiązkowego powrotu do biura.',
+    text: 'Siódmy miesiąc ocieplania dachu. Miał być tylko jeden pas wełny i drzemka po obiedzie. Jutro pierwszy dzień obowiązkowego powrotu do biura.',
     hints: [
       '<kbd>klik</kbd> lub <kbd>WASD</kbd> chodzenie',
       '<kbd>E</kbd> interakcja, <kbd>spacja</kbd> dalej',

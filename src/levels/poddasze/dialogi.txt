@@ -1,5 +1,5 @@
 # ==================================================================
-#  OPEN SPACE · prolog · Poddasze prezesa · poniedziałek, 26 października
+#  OPEN SPACE · prolog · Poddasze prezesa · niedziela, 25 października
 # ==================================================================
 #
 #  Format jak w levels/lodz10/dialogi.txt:
@@ -9,12 +9,12 @@
 
 
 # ------------------------------------------------------------------
-#  07:40 · Pobudka
+#  18:00 · Pobudka
 # ------------------------------------------------------------------
 
 [start]
-narrator: Poniedziałek, 7:40. Budzisz się w śpiworze na poddaszu własnego domu. We włosach masz wełnę mineralną.
-mysl: Miał być jeden pas przed snem. Kończyłem o drugiej. Gdzieś pika laptop.
+narrator: Niedziela, 18:00. Budzisz się w śpiworze na poddaszu własnego domu. We włosach masz wełnę mineralną.
+mysl: Miał być jeden pas i krótka drzemka po obiedzie. Obiad był o trzynastej. Gdzieś pika laptop.
 
 [cel.laptop] Sprawdź laptopa. Coś pika.
 [cel.whatsapp] Wyślij na grupę mema «niemdziela wieczur i humor popsuty».
@@ -27,7 +27,7 @@ mysl: Miał być jeden pas przed snem. Kończyłem o drugiej. Gdzieś pika lapto
 [cel.odkurz] Wyglądasz jak yeti z hurtowni budowlanej. Odkurz się.
 [cel.worek] Odkurzacz ma pełny worek. Zapasowe leżą na płytach GK.
 [cel.odkurz.worek] Wymień worek w odkurzaczu i odkurz się.
-[cel.skok] Zejdź przez klapę. Biuro czeka.
+[cel.skok] Zejdź przez klapę. Jutro biuro.
 
 
 # ------------------------------------------------------------------
@@ -35,9 +35,9 @@ mysl: Miał być jeden pas przed snem. Kończyłem o drugiej. Gdzieś pika lapto
 # ------------------------------------------------------------------
 
 [laptop.mail]
-narrator: Poczta. Jedna nowa wiadomość, wysłana w niedzielę o 23:47.
-bozena: Panie Prezesie, przypominam: od dziś obowiązuje polityka «Powrót do biura». Pana obecność ma wymiar symboliczny.
-bozena: Stand-up o 9:15 w Persji. Proszę o potwierdzenie.
+narrator: Poczta. Jedna nowa wiadomość, wysłana dziś o 17:52.
+bozena: Panie Prezesie, przypominam: od jutra obowiązuje polityka «Powrót do biura». Pana obecność ma wymiar symboliczny.
+bozena: Stand-up jutro o 9:15 w Persji. Proszę o potwierdzenie.
 - Odpisz: «Będę.»
 - Odpisz: «Jestem na wełnie. Będę zdalnie.»
 
@@ -48,7 +48,7 @@ mysl: Zanim zejdę, mem na grupę. Inaczej pomyślą, że wełna mnie wchłonę�
 [laptop.mail.zdalnie]
 narrator: Odpowiedź przychodzi, zanim zdążysz zdjąć rękę z klawiatury.
 bozena: Polityka obowiązuje wszystkich. Podpisał ją Pan w czwartek. Długopisem z logo.
-mysl: Faktycznie. Dobry długopis. No to jadę. Ale najpierw mem na grupę.
+mysl: Faktycznie. Dobry długopis. No to jutro jadę. Ale najpierw mem na grupę.
 
 [laptop.zasieg]
 narrator: Otwierasz WhatsAppa. Grupa «Open Space +10» kręci kółkiem. Zero kresek.
@@ -65,16 +65,16 @@ mysl: Dobrze, że taboret już tam stoi. Intuicja prezesa.
 mysl: Laptop mam pod pachą, mem czeka w kolejce. Zasięg jest pod oknem, wyżej, niż sięgam.
 
 [laptop.grupa]
-narrator: WhatsApp, grupa «Open Space +10». Ostatnia wiadomość z 23:58: «Prezes, żyjesz?».
-narrator: W galerii czeka mem z wczoraj: «niemdziela wieczur i humor popsuty».
-mysl: Pasuje idealnie. Tylko jaki podpis? Coś godnego stanowiska.
+narrator: WhatsApp, grupa «Open Space +10». Ostatnia wiadomość z 17:58: «Prezes, żyjesz?».
+narrator: W galerii czeka mem: «niemdziela wieczur i humor popsuty».
+mysl: Dziś pasuje jak nigdy. Tylko jaki podpis? Coś godnego stanowiska.
 - Wyślij mema bez komentarza.
 - Wyślij z podpisem: «Wełna 1 : Prezes 0».
-- Wyślij z podpisem: «Od dziś w biurze. Symbolicznie».
+- Wyślij z podpisem: «Od jutra w biurze. Symbolicznie».
 
 [laptop.grupa.1]
 narrator: Wysłane. Dwa niebieskie ptaszki po sekundzie. Dziewięć osób pisze…
-grupa: M@rcin: Prezes, jest poniedziałek.
+grupa: M@rcin: Prezes, jutro poniedziałek.
 grupa: K@sia: Dla prezesa niedziela trwa od marca. Mam tabelkę.
 grupa: Baciek: 😂😂😂
 grupa: Smol@r: Zgłoszenie przyjęte. Status: «W analizie».
@@ -97,7 +97,7 @@ grupa: Pszemo: To ja zrobię makietę prezesa. W Figmie.
 narrator: Zamykasz laptopa i wkładasz go pod pachę. Dioda jeszcze chwilę mruga, jakby chciała coś dodać.
 
 [laptop.spakowany]
-mysl: Na skrzynce został tylko kubek po wczorajszej kawie. Niech zostanie. Ociepla.
+mysl: Na skrzynce został tylko kubek po porannej kawie. Niech zostanie. Ociepla.
 
 
 # ------------------------------------------------------------------
@@ -149,7 +149,7 @@ mysl: Chwila. Jeszcze się nie pożegnałem z kalenicą.
 [klapa.lot]
 narrator: Skaczesz. Wełna łagodzi upadek, laptop przetrwał, kolano prawie.
 narrator: Świeżo odkurzona koszula w sekundę zbiera wełnę z powrotem.
-mysl: 7:58. Zdążę. Odkurzanie było symboliczne. Jak moja obecność w biurze.
+mysl: Do jutra zdążę się nawet wyspać. Odkurzanie było symboliczne. Jak moja obecność w biurze.
 
 [klapa.lot.pozno]
 narrator: Skaczesz. Wełna łagodzi upadek, laptop przetrwał, kolano prawie.
@@ -182,7 +182,7 @@ mysl: Jeden pas. Dziesięć minut. Nikt się nie dowie.
 - Nie. Biuro.
 
 [welna.nie]
-mysl: Nie. Jestem prezesem. Mam silną wolę. I zaplanowany stand-up.
+mysl: Nie. Jestem prezesem. Mam silną wolę. I jutro stand-up o 9:15.
 
 [welna.pas]
 narrator: Docinasz, wciskasz między krokwie, wygładzasz. Mija dwadzieścia pięć minut.
