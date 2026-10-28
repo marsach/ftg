@@ -73,20 +73,25 @@ mysl: Pasuje idealnie. Tylko jaki podpis? Coś godnego stanowiska.
 - Wyślij z podpisem: «Od dziś w biurze. Symbolicznie».
 
 [laptop.grupa.1]
-narrator: Wysłane. Dwa niebieskie ptaszki po sekundzie. Sześć osób pisze…
-grupa: Marcin: Prezes, jest poniedziałek.
-grupa: Kasia: Dla prezesa niedziela trwa od marca. Mam tabelkę.
+narrator: Wysłane. Dwa niebieskie ptaszki po sekundzie. Dziewięć osób pisze…
+grupa: M@rcin: Prezes, jest poniedziałek.
+grupa: K@sia: Dla prezesa niedziela trwa od marca. Mam tabelkę.
+grupa: Baciek: 😂😂😂
+grupa: Smol@r: Zgłoszenie przyjęte. Status: «W analizie».
 
 [laptop.grupa.2]
 narrator: Wysłane. Mem dostaje trzy reakcje, zanim zdążysz zamknąć okno.
-grupa: Marcin: To który to już miesiąc?
-grupa: Kasia: Siódmy. Ja liczę. Mam tabelkę.
-grupa: Radek: Prezes, wełnę da się kłaść z AI. Mam demo. Nie działa na strychu, bo nie ma Wi-Fi.
+grupa: M@rcin: To który to już miesiąc?
+grupa: K@sia: Siódmy. Ja liczę. Mam tabelkę.
+grupa: M@ciek: Ja obstawiałem, że wełna wygra do zera.
+grupa: R@do: Prezes, wełnę da się kłaść z AI. Mam demo. Nie działa na strychu, bo nie ma Wi-Fi.
 
 [laptop.grupa.3]
 narrator: Wysłane. Na grupie zapada cisza. Potem wszyscy naraz.
-grupa: Magda: Symbolicznie, czyli jak?
-grupa: Kasia: Czyli tak, jak kładzie wełnę.
+grupa: Hupcio: Symbolicznie, czyli jak?
+grupa: K@sia: Czyli tak, jak kładzie wełnę.
+grupa: Mikele: Rezerwuję prezesowi biurko przy oknie. Symbolicznie.
+grupa: Pszemo: To ja zrobię makietę prezesa. W Figmie.
 
 [laptop.pakuj]
 narrator: Zamykasz laptopa i wkładasz go pod pachę. Dioda jeszcze chwilę mruga, jakby chciała coś dodać.

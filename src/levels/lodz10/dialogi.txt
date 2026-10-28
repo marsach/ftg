@@ -107,10 +107,10 @@ bozena: Stand-up o 9:15 w Persji. Mamy tylko trzynaście punktów.
 
 [marek]
 marek: Nie teraz, jestem na callu.
-narrator: Marcin ma otwarty arkusz i wyciszone spotkanie. Słuchawki leżą obok, niepodłączone.
+narrator: M@rcin ma otwarty arkusz i wyciszone spotkanie. Słuchawki leżą obok, niepodłączone.
 
 [ania]
-narrator: Magda ma słuchawki z redukcją szumów. I minę z redukcją rozmów.
+narrator: Pszemo ma słuchawki z redukcją szumów. I minę z redukcją rozmów.
 
 [fikus]
 narrator: Fikus. Tabliczka w doniczce: «Zbigniew. Pracownik miesiąca».
@@ -121,7 +121,7 @@ narrator: Drukarka zgłasza: «Zacięcie papieru w podajniku 7». Drukarka ma tr
 
 
 # ------------------------------------------------------------------
-#  Hol przy Vice City · Radek, Head of AI Transformation
+#  Hol przy Vice City · R@do, Head of AI Transformation
 # ------------------------------------------------------------------
 
 [radek]
@@ -149,7 +149,7 @@ radek: Wiesz, że do 2027 AI zastąpi połowę stanowisk? Na razie zastąpiło m
 
 [radek.znowu2]
 radek: Robię prezentację o AI na zarząd. Sto slajdów. Generuje mi się od piątku.
-narrator: Na ekranie laptopa Radka kręci się kółko ładowania.
+narrator: Na ekranie laptopa R@da kręci się kółko ładowania.
 
 [radek.kawa]
 radek: O, kawa! Prawdziwa? Bo ja robię PoC wirtualnego baristy.
@@ -165,6 +165,6 @@ mysl: Bez kawy tam nie wchodzę. To nie podlega negocjacji.
 
 [sala.koniec]
 narrator: Wchodzisz do Persji z kubkiem w dłoni. Sześćdziesiąt krzeseł, trzy osoby. Ania podłącza trzeci adapter.
-narrator: Radek dołączył zdalnie, «bo agent robi mu notatki». Agent się nie połączył. Radek też.
+narrator: R@do dołączył zdalnie, «bo agent robi mu notatki». Agent się nie połączył. R@do też.
 bozena: Świetnie, jesteśmy w komplecie. Punkt pierwszy: dlaczego zaczynamy z opóźnieniem.
 narrator: Jest 9:15. Spotkanie potrwa piętnaście minut. Tak jest w zaproszeniu.

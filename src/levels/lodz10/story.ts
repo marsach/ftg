@@ -97,13 +97,13 @@ export const lodz10Story = defineStory({
       },
     },
 
-    ola: { label: 'Porozmawiaj z Kasią', use: (s) => s.say('ola') },
-    marek: { label: 'Porozmawiaj z Marcinem', use: (s) => s.say('marek') },
-    ania: { label: 'Zagadaj do Magdy', use: (s) => s.say('ania') },
+    ola: { label: 'Porozmawiaj z K@sią', use: (s) => s.say('ola') },
+    marek: { label: 'Porozmawiaj z M@rcinem', use: (s) => s.say('marek') },
+    ania: { label: 'Zagadaj do Pszema', use: (s) => s.say('ania') },
 
-    /** Radek: dużo o AI, zero efektów. Każda kolejna rozmowa to inna wymówka. */
+    /** R@do: dużo o AI, zero efektów. Każda kolejna rozmowa to inna wymówka. */
     radek: {
-      label: 'Porozmawiaj z Radkiem',
+      label: 'Porozmawiaj z R@dem',
       async use(s) {
         const f = s.flags;
         const n = f.get('radekTalks');

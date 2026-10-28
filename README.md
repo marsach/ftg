@@ -24,6 +24,26 @@ z pełnym workiem (zapasowe leżą na płytach GK). Na razie prolog nie przechod
 bo biuro jest w przeróbce: plansza końcowa zaczyna prolog od nowa, a adres `?poziom=biuro`
 działa tylko w `npm run dev` (jak odblokować: komentarz w `main.ts`).
 
+### Obsada
+
+Główni aktorzy w całej grze (ksywki piszemy dokładnie tak, razem z `@`):
+
+| Postać | W grze teraz | Klucz w `postacie.json` (biuro) |
+|---|---|---|
+| **Smol@r** | IT, „zgłoszenie w analizie”; na grupie | `kuba` |
+| **K@sia** | Marketing, liczy dni wełny w tabelce | `ola` |
+| **M@rcin** | Finanse, „jestem na callu” | `marek` |
+| **R@do** | Head of AI Transformation | `radek` |
+| **Pszemo** | UX, słuchawki z redukcją szumów | `ania` |
+| **Baciek** | na razie tylko grupa na WhatsAppie | – |
+| **Hupcio** | na razie tylko grupa na WhatsAppie | – |
+| **M@ciek** | na razie tylko grupa na WhatsAppie | – |
+| **Mikele** | na razie tylko grupa na WhatsAppie | – |
+
+Postacie poboczne: Prezes (gracz w prologu), Ania z HR (`bozena`).
+Klucze w `postacie.json` to wewnętrzne identyfikatory; wyświetlane imię bierze się z pola `name`.
+W tekstach odmieniamy normalnie: z K@sią, z M@rcinem, z R@dem, do Pszema, do Smol@ra.
+
 ---
 
 ## Architektura
